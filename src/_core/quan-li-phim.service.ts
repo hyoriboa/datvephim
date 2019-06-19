@@ -24,6 +24,42 @@ export class QuanLiPhimService {
       )
     );
   }
+  layDanhSachPhimSapChieu(): Observable<any>{
+    const url = `http://svcy2.myclass.vn/api/QuanLyPhim/LayDanhSachPhim?MaNhom=GP06`;
+    return this.http.get(url).pipe(
+      tap(
+        ()=>{},
+        catchError(err => {
+          return this.handleError(err);
+        })
+      )
+    );
+  }
+
+  layChiTietPhim(maPhim): Observable<any>{
+    const url = `http://svcy2.myclass.vn/api/QuanLyPhim/LayChiTietPhim?MaPhim=${maPhim}`;
+    return this.http.get(url).pipe(
+      tap(
+        ()=>{},
+        catchError(err => {
+          return this.handleError(err);
+        })
+      )
+    );
+  }
+
+  chiTietPhongVe(maLichChieu): Observable<any> {
+    const url = `http://svcy2.myclass.vn/api/QuanLyPhim/ChiTietPhongVe?MaLichChieu=${maLichChieu}`;
+    return this.http.get(url).pipe(
+      tap(
+        ()=>{},
+        catchError(err => {
+          return this.handleError(err);
+        })
+      )
+    );
+  }
+
 
 
   handleError(err){

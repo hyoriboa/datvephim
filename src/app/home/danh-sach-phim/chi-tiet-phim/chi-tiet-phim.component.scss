@@ -1,0 +1,80 @@
+.divKhoangCach{
+    margin-top: 58px;
+}
+.hinhNen{
+    position: relative;
+    img{
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+    .blur{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #000;
+        opacity: 0.6;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.noiDung{
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    h1{
+        margin: 0 20px;
+        display: inline-block;
+        background: linear-gradient(to right, #FFF3B0,#CA26FF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    p{
+        margin: 10px 20px 0 20px;
+        color: white;
+        font-weight: 200;
+        opacity: .8;
+        
+    }
+}
+
+.datVe{
+    h3{
+        display: inline-block;
+        background: linear-gradient(to right, blue, palevioletred);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+}
+
+.play{
+    position: absolute;
+    top: 160px;
+    left: 160px;
+    
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    i{
+        color: #13b3ff;
+        font-size: 60px;
+        line-height: 50px;
+        opacity: .4;
+        cursor: pointer;
+    }
+}
+
+.modal-content{
+    margin-top: 0;
+    width: 650px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0);
+    .close{
+        // background-color: rgba(0, 0, 0, 0);
+        background-color: red;
+        width: 100%;
+    }
+}

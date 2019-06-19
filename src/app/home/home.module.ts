@@ -9,12 +9,14 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SliderComponent } from './trang-chu/slider/slider.component';
 import { ItemPhimComponent } from './danh-sach-phim/item-phim/item-phim.component';
+import { ChiTietPhimComponent } from './danh-sach-phim/chi-tiet-phim/chi-tiet-phim.component';
 
 @NgModule({
-  declarations: [HomeComponent, TrangChuComponent, DanhSachPhimComponent, TinTucComponent, FooterComponent, LoginComponent, SliderComponent, ItemPhimComponent],
+  declarations: [HomeComponent, TrangChuComponent, DanhSachPhimComponent, TinTucComponent, 
+    FooterComponent, LoginComponent, SliderComponent, ItemPhimComponent, ChiTietPhimComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
   ]
 })
 export class HomeModule { }

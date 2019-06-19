@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { QuanLiPhimService } from '../_core/quan-li-phim.service';
+import { QuanLiPhimService } from 'src/_core/quan-li-phim.service';
+import { EmbedVideoService } from 'ngx-embed-video';
 
 
 @Component({
@@ -10,22 +11,61 @@ import { QuanLiPhimService } from '../_core/quan-li-phim.service';
 export class DanhSachPhimComponent implements OnInit {
 
   danhSachPhim = [];
+  danhSachPhimSapChieu = [];
+  danhSachPhimDaChon = [];
+  youtubeUrl: any;
+  phim: any;
+  tenPhim:any;
 
+  public iframe_html: any;
+  
   constructor(
-    private quanLyPhimService: QuanLiPhimService
+    private quanLyPhimService: QuanLiPhimService,
+    private embedService: EmbedVideoService
     ) { }
 
   ngOnInit() {
     this.getDanhSachPhim();
+    this.getDanhSachPhimSapChieu();
   }
 
   getDanhSachPhim(){
     this.quanLyPhimService.layDanhSachPhim().subscribe((data:any)=>{
-      console.log(data);
-      this.danhSachPhim = data;      
+      // console.log(data);
+      this.danhSachPhim = data;  
     });
   }
 
-  
+  getDanhSachPhimSapChieu(){
+    this.quanLyPhimService.layDanhSachPhimSapChieu().subscribe((data:any)=>{
+      // console.log(data);
+      this.danhSachPhimSapChieu = data;  
+    });
+  }
+
+  xemTrailer(phim){
+    console.log(phim);
+    
+    this.phim = phim;
+    this.youtubeUrl  = this.phim.Trailer;
+    if(!this.youtubeUrl.includes("embed")){
+      this.tenPhim = this.phim.TenPhim;
+      this.iframe_html = this.embedService.embed(this.youtubeUrl,{
+        attr: { width: '100%', height: 500},
+      });  
+    }else{
+      this.youtubeUrl = this.youtubeUrl.replace('embed/', 'watch?v=');
+      this.tenPhim = this.phim.TenPhim;
+      this.iframe_html = this.embedService.embed(this.youtubeUrl,{
+        attr: { width: '100%', height: 500},
+      });  
+    }
+    
+    
+  }
+
+  tatTrailer(){
+    this.iframe_html = '';
+  }
     
 }

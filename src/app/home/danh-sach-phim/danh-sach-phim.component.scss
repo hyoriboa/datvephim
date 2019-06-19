@@ -1,0 +1,35 @@
+// .xemthem{
+//     text-align: center;
+//     .btnXemThem {
+//         display: inline-block;
+//         border: none;
+//         width: 50px;
+//         height: 50px;
+//         border-radius: 50%;
+//         background-color: white;
+//         &:hover{
+//             border: solid 1px none;
+//             background-color: #DDDDDD;
+//         }
+//         &:focus{
+//             box-shadow: none;
+//             border: none;
+//         }
+
+//     }
+
+// }
+
+
+
+.modal-content{
+    margin-top: 0;
+    width: 650px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0);
+    .close{
+        // background-color: rgba(0, 0, 0, 0);
+        background-color: red;
+        width: 100%;
+    }
+}

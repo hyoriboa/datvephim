@@ -14,17 +14,18 @@
       <div class="tab-content">
         <div class="tab-pane container active" id="mon">
           <div class="container py-5">
-  
             <div class="row">
               <div class="col-md-3 col-sm-6" *ngFor="let item of danhSachPhim" > 
 
                 <!-- item phim component -->
-                <app-item-phim [phim]="item"></app-item-phim>
+                <app-item-phim data-toggle="modal" data-target="#myModalTrailer" [phim]="item" (eventPhim)="xemTrailer($event)">
+                </app-item-phim>
 
               </div>
             </div>
-  
+           
           </div>
+          
         </div>
 
         <!-- Tab panes Phim sap chiếu -->
@@ -33,215 +34,12 @@
             <div class="container py-5">
   
               <div class="row">
-                <div class="col-md-3 col-sm-6">
-                  <div class="showing__item">
-                    <img
-                      src="https://s3img.vcdn.vn/mobile/123phim/2018/11/dang-cap-thu-cung-2-the-secret-life-of-pets-2-15423580835138_370x490.jpg"
-                      alt="">
-                    <div class="showing__overlay"></div>
-                    <div class="showing__content text-white">
-                      <div class="play">
-                        <i class="fa fa-shopping-cart"></i>
-                      </div>
-                      <p>X-Men</p>
-                      <p>Released: 7 Mar, 2017</p>
-                    </div>
+                  <div class="col-md-3 col-sm-6" *ngFor="let item of danhSachPhimSapChieu" > 
+                      <!-- item phim component -->
+                      <app-item-phim data-toggle="modal" data-target="#myModalTrailer" [phim]="item" (eventPhim)="xemTrailer($event)">
+                      </app-item-phim>
+      
                   </div>
-                  <div class="showing__rating">
-                    <p>HUSH</p>
-                    <div class="star">
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                    </div>
-                  </div>
-  
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="showing__item">
-                    <img
-                      src="https://s3img.vcdn.vn/mobile/123phim/2018/11/dang-cap-thu-cung-2-the-secret-life-of-pets-2-15423580835138_370x490.jpg"
-                      alt="">
-                    <div class="showing__overlay"></div>
-                    <div class="showing__content text-white">
-                      <div class="play">
-                        <i class="fa fa-shopping-cart"></i>
-                      </div>
-                      <p>X-Men</p>
-                      <p>Released: 7 Mar, 2017</p>
-                    </div>
-                  </div>
-                  <div class="showing__rating">
-                    <p>HUSH</p>
-                    <div class="star">
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                    </div>
-                  </div>
-  
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="showing__item">
-                    <img
-                      src="https://s3img.vcdn.vn/mobile/123phim/2018/11/dang-cap-thu-cung-2-the-secret-life-of-pets-2-15423580835138_370x490.jpg"
-                      alt="">
-                    <div class="showing__overlay"></div>
-                    <div class="showing__content text-white">
-                      <div class="play">
-                        <i class="fa fa-shopping-cart"></i>
-                      </div>
-                      <p>X-Men</p>
-                      <p>Released: 7 Mar, 2017</p>
-                    </div>
-                  </div>
-                  <div class="showing__rating">
-                    <p>HUSH</p>
-                    <div class="star">
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                    </div>
-                  </div>
-  
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="showing__item">
-                    <img
-                      src="https://s3img.vcdn.vn/mobile/123phim/2019/05/x-men-phuong-hoang-bong-toi-x-men-dark-phoenix-15578101642840_370x490.jpg"
-                      alt="">
-                    <div class="showing__overlay"></div>
-                    <div class="showing__content text-white">
-                      <div class="play">
-                        <i class="fa fa-shopping-cart"></i>
-                      </div>
-                      <p>X-MenMenMenMenMenMenMenMenMenMenMenMen</p>
-                      <p>Released: 7 Mar, 2017</p>
-                    </div>
-                  </div>
-                  <div class="showing__rating">
-                    <p>HUSHHUSHHUSHHHUSHHUSHHUSHHHUSHHUSHHUSHHHUSHHUSHHUSHH</p>
-                    <div class="star">
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                    </div>
-                  </div>
-  
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="showing__item">
-                    <img
-                      src="https://s3img.vcdn.vn/mobile/123phim/2019/05/x-men-phuong-hoang-bong-toi-x-men-dark-phoenix-15578101642840_370x490.jpg"
-                      alt="">
-                    <div class="showing__overlay"></div>
-                    <div class="showing__content text-white">
-                      <div class="play">
-                        <i class="fa fa-shopping-cart"></i>
-                      </div>
-                      <p>X-MenMenMenMenMenMenMenMenMenMenMenMen</p>
-                      <p>Released: 7 Mar, 2017</p>
-                    </div>
-                  </div>
-                  <div class="showing__rating">
-                    <p>HUSHHUSHHUSHHHUSHHUSHHUSHHHUSHHUSHHUSHHHUSHHUSHHUSHH</p>
-                    <div class="star">
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                    </div>
-                  </div>
-  
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="showing__item">
-                    <img
-                      src="https://s3img.vcdn.vn/mobile/123phim/2019/05/x-men-phuong-hoang-bong-toi-x-men-dark-phoenix-15578101642840_370x490.jpg"
-                      alt="">
-                    <div class="showing__overlay"></div>
-                    <div class="showing__content text-white">
-                      <div class="play">
-                        <i class="fa fa-shopping-cart"></i>
-                      </div>
-                      <p>X-MenMenMenMenMenMenMenMenMenMenMenMen</p>
-                      <p>Released: 7 Mar, 2017</p>
-                    </div>
-                  </div>
-                  <div class="showing__rating">
-                    <p>HUSHHUSHHUSHHHUSHHUSHHUSHHHUSHHUSHHUSHHHUSHHUSHHUSHH</p>
-                    <div class="star">
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                    </div>
-                  </div>
-  
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="showing__item">
-                    <img
-                      src="https://s3img.vcdn.vn/mobile/123phim/2019/05/x-men-phuong-hoang-bong-toi-x-men-dark-phoenix-15578101642840_370x490.jpg"
-                      alt="">
-                    <div class="showing__overlay"></div>
-                    <div class="showing__content text-white">
-                      <div class="play">
-                        <i class="fa fa-shopping-cart"></i>
-                      </div>
-                      <p>X-MenMenMenMenMenMenMenMenMenMenMenMen</p>
-                      <p>Released: 7 Mar, 2017</p>
-                    </div>
-                  </div>
-                  <div class="showing__rating">
-                    <p>HUSHHUSHHUSHHHUSHHUSHHUSHHHUSHHUSHHUSHHHUSHHUSHHUSHH</p>
-                    <div class="star">
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                    </div>
-                  </div>
-  
-                </div>
-                <div class="col-md-3 col-sm-6">
-                  <div class="showing__item">
-                    <img
-                      src="https://s3img.vcdn.vn/mobile/123phim/2019/05/x-men-phuong-hoang-bong-toi-x-men-dark-phoenix-15578101642840_370x490.jpg"
-                      alt="">
-                    <div class="showing__overlay"></div>
-                    <div class="showing__content text-white">
-                      <div class="play">
-                        <i class="fa fa-shopping-cart"></i>
-                      </div>
-                      <p>X-MenMenMenMenMenMenMenMenMenMenMenMen</p>
-                      <p>Released: 7 Mar, 2017</p>
-                    </div>
-                  </div>
-                  <div class="showing__rating">
-                    <p>HUSHHUSHHUSHHHUSHHUSHHUSHHHUSHHUSHHUSHHHUSHHUSHHUSHH</p>
-                    <div class="star">
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                    </div>
-                  </div>
-  
-                </div>
-  
               </div>
   
             </div>
@@ -250,3 +48,29 @@
       </div>
     </div>
   </div>
+
+
+
+
+   <!-- The Modal -->
+ <div class="modal fade" id="myModalTrailer">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal body -->
+      <div class="modal-body">
+          <button type="button" class="close btn btn-danger" data-dismiss="modal" (click)="tatTrailer()">&times;</button>
+          <!-- <iframe #youtube width="300" height="315" [src]="safeSrc" frameborder="0" allowfullscreen></iframe> -->
+          <ng-template #KoTrailer>
+              <div [innerHtml]="iframe_html" frameborder="0"></div>
+          </ng-template>
+          <ng-container *ngIf="iframe_html === null; else KoTrailer">
+              <div > Chua co video</div>
+          </ng-container>
+          
+      </div>
+
+
+    </div>
+  </div>
+</div>

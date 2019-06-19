@@ -3,14 +3,15 @@
     <div class="showing__overlay"></div>
     <div class="showing__content text-white">
       <div class="play">
-        <i class="fa fa-shopping-cart"></i>
+        <i class="fa fa-play"  (click)="xemTrailer()" ></i>
       </div>
       <p>{{ phim.TenPhim }}</p>
-      <p>Released: 7 Mar, 2017</p>
+      <p class="ngayChieu">Released: 7 Mar, 2017</p>
+      <button class="btnMuave" (click) = "muaVe()">Mua ve</button>
     </div>
-  </div>
-  <div class="showing__rating">
-    <p>{{ phim.TenPhim }}</p>
+</div>
+<div class="showing__rating">
+    <p (click)="xemTrailer()">{{ phim.TenPhim }}</p>
     <div class="star">
       <i class="fa fa-star"></i>
       <i class="fa fa-star"></i>
@@ -18,4 +19,8 @@
       <i class="fa fa-star"></i>
       <i class="fa fa-star"></i>
     </div>
-  </div>
+</div>
+
+
+
+

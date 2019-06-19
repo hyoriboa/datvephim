@@ -1,0 +1,69 @@
+<div class="divKhoangCach"></div>
+<ng-container *ngIf="phim != null">
+    <div class="container chitietphim">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="hinhNen">
+            <img [src]="phim.HinhAnh" alt="">
+            <div class="blur"></div>
+          </div>
+          <div class="play">
+            <i class="fa fa-play-circle" data-toggle="modal" data-target="#myModal" (click)="xemTrailer()"></i>
+          </div>
+          <div class="noiDung">
+            <h1>{{ phim.TenPhim }}</h1>
+            <p>{{ phim.MoTa }}</p>
+          </div>
+        </div>
+        <div class="col-md-8 datVe">
+          <h3>Mua ve</h3>
+            <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <td>Tên rạp</td>
+                    <td>Ngày chiếu</td>
+                    <td>Giờ chiếu</td>
+                    <td>Giá vé</td>
+                    <td>Mua vé</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of phim.LichChieu">
+                    <td>{{ item.Rap.TenRap }}</td>
+                    <td>{{ item.NgayChieuGioChieu | date: "dd/MM/yyyy" }}</td>
+                    <td>{{ item.NgayChieuGioChieu | date: "hh:mm" }}</td>
+                    <td>{{ item.GiaVe }}</td>
+                    <td>
+                      <button class="btn btn-danger" (click)="muaVe(item.MaLichChieu)">Mua vé</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </div>
+      <div class="row mt-1">
+        <div class="col-sm-12">
+          
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  
+
+
+  <!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal body -->
+      <div class="modal-body">
+          <button type="button" class="close btn btn-danger" data-dismiss="modal" (click)="tatTrailer()">&times;</button>
+          <!-- <iframe #youtube width="300" height="315" [src]="safeSrc" frameborder="0" allowfullscreen></iframe> -->
+          <div [innerHtml]="iframe_html" frameborder="0"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
