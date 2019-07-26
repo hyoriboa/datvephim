@@ -42,11 +42,7 @@
           i {
             line-height: 40px;
           }
-  
-          &:hover {
-            color: #FF0E83;
-          }
-        }
+
   
         .logfont {
           border: 1px solid white;
@@ -68,7 +64,7 @@
       }
     }
   }
-  
+}
   
 //SLIDER
 .myCarousel {
@@ -370,4 +366,5 @@
 /* FOOTER */
  footer{
     background-color: black;
+    margin-top: 50px;
   }

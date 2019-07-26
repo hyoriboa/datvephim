@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="col-sm-12 mx-auto">
+    <h4 class="titleBooking">BOOKING ONLINE</h4>
+    <h4 class="screen">Screen</h4>
+    <div class="rap">
+      <ng-container *ngFor="let item of danhSachGhe ; let stt = index">
+        <app-ghe [ghe]="item" (eventGhe)="datGhe($event)"></app-ghe>
+        <br *ngIf=" (stt+1)%15 === 0">
+      </ng-container>
+    </div>
+    <div class="chuThich">
+      <h6>* Chú ý *</h6>
+      <button class="chuaChon">Ghe Chua Chon</button>
+      <button class="daChon">Ghe Da Chon</button>
+      <button class="koTheChon">Khong The Chon</button>
+    </div>
+    <div class="dsGheDD">
+      <h4 class="titleDD">GHẾ ĐÃ ĐẶT</h4>
+      <button class="btnThanhToan">Thanh Toan</button>
+
+      <div class="row">
+        <app-thong-tin-phim class="hinhAnhPhim"></app-thong-tin-phim>
+        <div class="col-sm-4">
+            <div class="thongTin text-center">
+                <div class="combo1">
+                    <div class="hinh">
+                        <img src="https://www.cgv.vn/media/concession/web/5bdbc550c1f5a_1541129553.png" alt="">
+                        <p>40.000 VND</p>
+                    </div>
+                    <div class="thongTinCB1">
+                        <p class="ten titleCB1">COMBO 1</p>
+                        <div class="click">
+                            <button class="btn btn-danger" (click)="giamCombo()">-</button>
+                            <label>{{soluong1}}</label>
+                            <button class="btn btn-success" (click)="themCombo()">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="combo1">
+                    <div class="hinh">
+                        <img src="https://www.cgv.vn/media/concession/web/5bdbc5615432a_1541129569.png" alt="">
+                        <p>50.000 VND</p>
+                    </div>
+                    <div class="thongTinCB1">
+                        <p class="ten titleCB1">COMBO 2</p>
+                        <div class="click">
+                            <button class="btn btn-danger" (click)="giamCombo2()">-</button>
+                            <label>{{soluong2}}</label>
+                            <button class="btn btn-success" (click)="themCombo2()">+</button>
+                        </div>
+                    </div>
+                </div>
+               
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="thongTin text-center">
+                <p class="ten">TỔNG TIỀN:
+                  {{tongCB1 + tienVe + tongCB2}} VND</p>
+                <p *ngFor="let item of danhSachGheDaDat; let index = index">Ghế: {{ item.TenGhe }} 
+                  - Giá: {{item.GiaVe}} VND</p>
+                <h6>Tổng tiền vé: {{tienVe}} VND</h6>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuanLiPhimService } from 'src/_core/quan-li-phim.service';
 import { EmbedVideoService } from 'ngx-embed-video';
+import { ShareDataService } from 'src/_core/shared/share-data.service';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class DanhSachPhimComponent implements OnInit {
   
   constructor(
     private quanLyPhimService: QuanLiPhimService,
-    private embedService: EmbedVideoService
+    private embedService: EmbedVideoService,
+    private shareDataService: ShareDataService
     ) { }
 
   ngOnInit() {
@@ -32,7 +34,9 @@ export class DanhSachPhimComponent implements OnInit {
   getDanhSachPhim(){
     this.quanLyPhimService.layDanhSachPhim().subscribe((data:any)=>{
       // console.log(data);
-      this.danhSachPhim = data;  
+      this.danhSachPhim = data; 
+      this.shareDataService.shareingDataListDanhSachPhim(data);
+      
     });
   }
 
@@ -47,15 +51,14 @@ export class DanhSachPhimComponent implements OnInit {
     console.log(phim);
     
     this.phim = phim;
+    this.tenPhim = this.phim.TenPhim;
     this.youtubeUrl  = this.phim.Trailer;
     if(!this.youtubeUrl.includes("embed")){
-      this.tenPhim = this.phim.TenPhim;
       this.iframe_html = this.embedService.embed(this.youtubeUrl,{
         attr: { width: '100%', height: 500},
       });  
     }else{
       this.youtubeUrl = this.youtubeUrl.replace('embed/', 'watch?v=');
-      this.tenPhim = this.phim.TenPhim;
       this.iframe_html = this.embedService.embed(this.youtubeUrl,{
         attr: { width: '100%', height: 500},
       });  

@@ -34,7 +34,8 @@
                     <td>{{ item.NgayChieuGioChieu | date: "hh:mm" }}</td>
                     <td>{{ item.GiaVe }}</td>
                     <td>
-                      <button class="btn btn-danger" (click)="muaVe(item.MaLichChieu)">Mua vé</button>
+                      <button class="btn btn-danger" 
+                      (click)="muaVe(item.MaLichChieu, item.Rap, item.NgayChieuGioChieu)">Mua vé</button>
                     </td>
                   </tr>
                 </tbody>
@@ -48,8 +49,6 @@
       </div>
     </div>
   </ng-container>
-  
-
 
   <!-- The Modal -->
 <div class="modal fade" id="myModal">

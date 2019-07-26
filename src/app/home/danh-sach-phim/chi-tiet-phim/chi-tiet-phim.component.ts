@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { QuanLiPhimService } from 'src/_core/quan-li-phim.service';
 import { EmbedVideoService } from 'ngx-embed-video';
+import { ShareDataService } from 'src/_core/shared/share-data.service';
 
 
 
@@ -23,7 +24,9 @@ export class ChiTietPhimComponent implements OnInit {
   constructor(private quanLyPhimService: QuanLiPhimService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private embedService: EmbedVideoService) { 
+    private embedService: EmbedVideoService,
+    private shareDataService: ShareDataService
+    ) { 
 
     }
 
@@ -34,9 +37,11 @@ export class ChiTietPhimComponent implements OnInit {
 
   getChiTietPhim(){
     this.quanLyPhimService.layChiTietPhim(this.maPhim).subscribe((data:any)=>{
-      // console.log(data);
+      console.log(data);
        this.phim = data;
+       this.shareDataService.shareingDataGetChiTietPhim(data);
     });
+    
   }
 
   getParams(){
@@ -56,6 +61,12 @@ export class ChiTietPhimComponent implements OnInit {
 
   tatTrailer(){
     this.iframe_html = '';
+  }
+
+  muaVe(maLichChieu, tenRap, ngayGioChieu){
+    this.router.navigate(["/home/phong-ve", maLichChieu]);
+    this.shareDataService.shareingDataChiTietPhongVe(tenRap);
+    this.shareDataService.shareingDataNgayGioChieu(ngayGioChieu);
   }
 
 }

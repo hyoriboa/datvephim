@@ -18,7 +18,8 @@
               <div class="col-md-3 col-sm-6" *ngFor="let item of danhSachPhim" > 
 
                 <!-- item phim component -->
-                <app-item-phim data-toggle="modal" data-target="#myModalTrailer" [phim]="item" (eventPhim)="xemTrailer($event)">
+                <app-item-phim data-toggle="modal" data-target="#myModalTrailer" [phim]="item" 
+                (eventPhim)="xemTrailer($event)">
                 </app-item-phim>
 
               </div>
@@ -36,8 +37,8 @@
               <div class="row">
                   <div class="col-md-3 col-sm-6" *ngFor="let item of danhSachPhimSapChieu" > 
                       <!-- item phim component -->
-                      <app-item-phim data-toggle="modal" data-target="#myModalTrailer" [phim]="item" (eventPhim)="xemTrailer($event)">
-                      </app-item-phim>
+                      <app-item-phim data-toggle="modal" data-target="#myModalTrailer" [phim]="item" 
+                      (eventPhim)="xemTrailer($event)"></app-item-phim>
       
                   </div>
               </div>
@@ -48,9 +49,6 @@
       </div>
     </div>
   </div>
-
-
-
 
    <!-- The Modal -->
  <div class="modal fade" id="myModalTrailer">

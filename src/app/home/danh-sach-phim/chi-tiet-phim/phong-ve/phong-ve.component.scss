@@ -1,0 +1,110 @@
+.container{
+    background-color: #c7c7c7;
+    margin-top: 80px;
+    position: relative;
+    .titleBooking{
+        background-color: black;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        padding: 10px 0;
+        margin-bottom: 30px !important;
+        box-shadow: 10px 0px 10px black;
+        position: relative;
+    }
+    .screen{
+        margin-bottom: 50px !important;
+        width: 65%;
+        background-color: plum;
+        text-align: center;
+        font-weight: bold;
+        margin: 0 auto;
+    }
+    .rap{
+        text-align: center;
+    }
+    .chuThich{
+        display: flex;
+        width: 60%;
+        margin: 20px auto;
+        h6{
+            margin: auto 30px;
+            font-weight: bold;
+            color: red;
+        }
+        button{
+            border: none;
+            margin-right: 5px;
+            padding: 5px 20px;
+            cursor: no-drop;
+        }
+        .chuaChon{
+            background-color: #808080;
+        }
+        .daChon{
+            background-color: #13b3ff;
+        }
+        .koTheChon{
+            background-color: #ff5a5a;
+        }
+    }
+
+    .dsGheDD{
+        
+        box-shadow: 5px -2px 5px black;
+        color: white;
+        text-align: center;
+        position: relative;
+        .btnThanhToan{
+            position: absolute;
+            top: 10px;
+            right: 210px;
+            border: none;
+            border-radius: 2px;
+            background-color: #ff5a5a;
+            color: white;
+            padding: 5px 15px;
+        }
+        .titleDD{
+            padding: 10px 0;
+        }
+        .chiTiet{
+            margin: 0 0 20px 30px;
+        }
+        .thongTin{
+            margin-left: 30px;
+            .ten{
+                font-weight: bold;
+                font-size: 20px;
+                display: inline-block;
+                background: linear-gradient(to right, red, blue);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            img{
+                width: 153px;
+                height: 153px;
+            }
+        }
+       
+    }
+    
+    
+}
+.combo1{
+    display: flex;
+    .thongTinCB1{
+        margin-top: 20px;
+        .click{
+            display: flex;
+            button{
+                border: none;
+                width: 40px;
+                height: 30px;
+                font-weight: bolder;
+                margin: 0 20px;
+                padding: 0;
+            }
+        }
+    }
+}

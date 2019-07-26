@@ -1,0 +1,15 @@
+.chiTiet{
+    margin: 0 0 20px 30px;
+}
+.thongTin{
+    margin-top: -20px;
+    margin-left: 30px;
+    .ten{
+        width: 200px !important;
+        font-weight: bold;
+        font-size: 20px;
+        background: linear-gradient(to right, red, blue);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
